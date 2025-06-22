@@ -1,0 +1,1350 @@
+[
+  {
+    "question": "Execute a Git subcommand:",
+    "answer": "git {{subcommand}}"
+  },
+  {
+    "question": "Execute a Git subcommand on a custom repository root path:",
+    "answer": "git -C {{path/to/repo}} {{subcommand}}"
+  },
+  {
+    "question": "Execute a Git subcommand with a given configuration set:",
+    "answer": "git -c '{{config.key}}={{value}}' {{subcommand}}"
+  },
+  {
+    "question": "Display help:",
+    "answer": "git {{[-h|--help]}}"
+  },
+  {
+    "question": "Display help for a specific subcommand (like `clone`, `add`, `push`, `log`, etc.):",
+    "answer": "git help {{subcommand}}"
+  },
+  {
+    "question": "Display version:",
+    "answer": "git {{[-v|--version]}}"
+  },
+  {
+    "question": "Start an interactive shell session:",
+    "answer": "bash"
+  },
+  {
+    "question": "Start an interactive shell session without loading startup configs:",
+    "answer": "bash --norc"
+  },
+  {
+    "question": "Execute specific [c]ommands:",
+    "answer": "bash -c \"{{echo 'bash is executed'}}\""
+  },
+  {
+    "question": "Execute a specific script:",
+    "answer": "bash {{path/to/script.sh}}"
+  },
+  {
+    "question": "E[x]ecute a specific script, printing each command before executing it:",
+    "answer": "bash -x {{path/to/script.sh}}"
+  },
+  {
+    "question": "Execute a specific script and stop at the first [e]rror:",
+    "answer": "bash -e {{path/to/script.sh}}"
+  },
+  {
+    "question": "Execute specific commands from `stdin`:",
+    "answer": "{{echo \"echo 'bash is executed'\"}} | bash"
+  },
+  {
+    "question": "Start a [r]estricted shell session:",
+    "answer": "bash -r"
+  },
+  {
+    "question": "[c]reate an archive and write it to a [f]ile:",
+    "answer": "tar cf {{path/to/target.tar}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "[c]reate a g[z]ipped archive and write it to a [f]ile:",
+    "answer": "tar czf {{path/to/target.tar.gz}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "[c]reate a g[z]ipped (compressed) archive from a directory using relative paths:",
+    "answer": "tar czf {{path/to/target.tar.gz}} --directory={{path/to/directory}} ."
+  },
+  {
+    "question": "E[x]tract a (compressed) archive [f]ile into the current directory [v]erbosely:",
+    "answer": "tar xvf {{path/to/source.tar[.gz|.bz2|.xz]}}"
+  },
+  {
+    "question": "E[x]tract a (compressed) archive [f]ile into the target directory:",
+    "answer": "tar xf {{path/to/source.tar[.gz|.bz2|.xz]}} --directory={{path/to/directory}}"
+  },
+  {
+    "question": "[c]reate a compressed archive and write it to a [f]ile, using the file extension to [a]utomatically determine the compression program:",
+    "answer": "tar caf {{path/to/target.tar.xz}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "Lis[t] the contents of a tar [f]ile [v]erbosely:",
+    "answer": "tar tvf {{path/to/source.tar}}"
+  },
+  {
+    "question": "E[x]tract files matching a pattern from an archive [f]ile:",
+    "answer": "tar xf {{path/to/source.tar}} --wildcards \"{{*.html}}\""
+  },
+  {
+    "question": "Compress a file, replacing it with a `gzip` archive:",
+    "answer": "gzip {{path/to/file}}"
+  },
+  {
+    "question": "Decompress a file, replacing it with the original uncompressed version:",
+    "answer": "gzip {{[-d|--decompress]}} {{path/to/file.gz}}"
+  },
+  {
+    "question": "Compress a file, keeping the original file:",
+    "answer": "gzip {{[-k|--keep]}} {{path/to/file}}"
+  },
+  {
+    "question": "Compress a file, specifying the output filename:",
+    "answer": "gzip {{[-c|--stdout]}} {{path/to/file}} > {{path/to/compressed_file.gz}}"
+  },
+  {
+    "question": "Decompress a `gzip` archive specifying the output filename:",
+    "answer": "gzip {{[-c|--stdout]}} {{[-d|--decompress]}} {{path/to/file.gz}} > {{path/to/uncompressed_file}}"
+  },
+  {
+    "question": "Specify the compression level. 1 is the fastest (low compression), 9 is the slowest (high compression), 6 is the default:",
+    "answer": "gzip -{{1..9}} {{[-c|--stdout]}} {{path/to/file}} > {{path/to/compressed_file.gz}}"
+  },
+  {
+    "question": "Display the name and reduction percentage for each file compressed or decompressed:",
+    "answer": "gzip {{[-v|--verbose]}} {{[-d|--decompress]}} {{path/to/file.gz}}"
+  },
+  {
+    "question": "Search for a pattern within a file:",
+    "answer": "grep \"{{search_pattern}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Search for an exact string (disables regular expressions):",
+    "answer": "grep {{[-F|--fixed-strings]}} \"{{exact_string}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Search for a pattern in all files recursively in a directory, showing line numbers of matches, ignoring binary files:",
+    "answer": "grep {{[-r|--recursive]}} {{[-n|--line-number]}} {{[-I|--binary-files=without-match]}} \"{{search_pattern}}\" {{path/to/directory}}"
+  },
+  {
+    "question": "Use extended regular expressions (supports `?`, `+`, `{}`, `()`, and `|`), in case-insensitive mode:",
+    "answer": "grep {{[-E|--extended-regexp]}} {{[-i|--ignore-case]}} \"{{search_pattern}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Print 3 lines of [C]ontext around, [B]efore or [A]fter each match:",
+    "answer": "grep --{{context|before-context|after-context}} 3 \"{{search_pattern}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Print file name and line number for each match with color output:",
+    "answer": "grep {{[-H|--with-filename]}} {{[-n|--line-number]}} --color=always \"{{search_pattern}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Search for lines matching a pattern, printing only the matched text:",
+    "answer": "grep {{[-o|--only-matching]}} \"{{search_pattern}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Search `stdin` for lines that do not match a pattern:",
+    "answer": "cat {{path/to/file}} | grep {{[-v|--invert-match]}} \"{{search_pattern}}\""
+  },
+  {
+    "question": "Execute a Git subcommand:",
+    "answer": "git {{subcommand}}"
+  },
+  {
+    "question": "Execute a Git subcommand on a custom repository root path:",
+    "answer": "git -C {{path/to/repo}} {{subcommand}}"
+  },
+  {
+    "question": "Execute a Git subcommand with a given configuration set:",
+    "answer": "git -c '{{config.key}}={{value}}' {{subcommand}}"
+  },
+  {
+    "question": "Display help:",
+    "answer": "git {{[-h|--help]}}"
+  },
+  {
+    "question": "Display help for a specific subcommand (like `clone`, `add`, `push`, `log`, etc.):",
+    "answer": "git help {{subcommand}}"
+  },
+  {
+    "question": "Display version:",
+    "answer": "git {{[-v|--version]}}"
+  },
+  {
+    "question": "Start an interactive shell session:",
+    "answer": "bash"
+  },
+  {
+    "question": "Start an interactive shell session without loading startup configs:",
+    "answer": "bash --norc"
+  },
+  {
+    "question": "Execute specific [c]ommands:",
+    "answer": "bash -c \"{{echo 'bash is executed'}}\""
+  },
+  {
+    "question": "Execute a specific script:",
+    "answer": "bash {{path/to/script.sh}}"
+  },
+  {
+    "question": "E[x]ecute a specific script, printing each command before executing it:",
+    "answer": "bash -x {{path/to/script.sh}}"
+  },
+  {
+    "question": "Execute a specific script and stop at the first [e]rror:",
+    "answer": "bash -e {{path/to/script.sh}}"
+  },
+  {
+    "question": "Execute specific commands from `stdin`:",
+    "answer": "{{echo \"echo 'bash is executed'\"}} | bash"
+  },
+  {
+    "question": "Start a [r]estricted shell session:",
+    "answer": "bash -r"
+  },
+  {
+    "question": "[c]reate an archive and write it to a [f]ile:",
+    "answer": "tar cf {{path/to/target.tar}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "[c]reate a g[z]ipped archive and write it to a [f]ile:",
+    "answer": "tar czf {{path/to/target.tar.gz}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "[c]reate a g[z]ipped (compressed) archive from a directory using relative paths:",
+    "answer": "tar czf {{path/to/target.tar.gz}} --directory={{path/to/directory}} ."
+  },
+  {
+    "question": "E[x]tract a (compressed) archive [f]ile into the current directory [v]erbosely:",
+    "answer": "tar xvf {{path/to/source.tar[.gz|.bz2|.xz]}}"
+  },
+  {
+    "question": "E[x]tract a (compressed) archive [f]ile into the target directory:",
+    "answer": "tar xf {{path/to/source.tar[.gz|.bz2|.xz]}} --directory={{path/to/directory}}"
+  },
+  {
+    "question": "[c]reate a compressed archive and write it to a [f]ile, using the file extension to [a]utomatically determine the compression program:",
+    "answer": "tar caf {{path/to/target.tar.xz}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "Lis[t] the contents of a tar [f]ile [v]erbosely:",
+    "answer": "tar tvf {{path/to/source.tar}}"
+  },
+  {
+    "question": "E[x]tract files matching a pattern from an archive [f]ile:",
+    "answer": "tar xf {{path/to/source.tar}} --wildcards \"{{*.html}}\""
+  },
+  {
+    "question": "Compress a file, replacing it with a `gzip` archive:",
+    "answer": "gzip {{path/to/file}}"
+  },
+  {
+    "question": "Decompress a file, replacing it with the original uncompressed version:",
+    "answer": "gzip {{[-d|--decompress]}} {{path/to/file.gz}}"
+  },
+  {
+    "question": "Compress a file, keeping the original file:",
+    "answer": "gzip {{[-k|--keep]}} {{path/to/file}}"
+  },
+  {
+    "question": "Compress a file, specifying the output filename:",
+    "answer": "gzip {{[-c|--stdout]}} {{path/to/file}} > {{path/to/compressed_file.gz}}"
+  },
+  {
+    "question": "Decompress a `gzip` archive specifying the output filename:",
+    "answer": "gzip {{[-c|--stdout]}} {{[-d|--decompress]}} {{path/to/file.gz}} > {{path/to/uncompressed_file}}"
+  },
+  {
+    "question": "Specify the compression level. 1 is the fastest (low compression), 9 is the slowest (high compression), 6 is the default:",
+    "answer": "gzip -{{1..9}} {{[-c|--stdout]}} {{path/to/file}} > {{path/to/compressed_file.gz}}"
+  },
+  {
+    "question": "Display the name and reduction percentage for each file compressed or decompressed:",
+    "answer": "gzip {{[-v|--verbose]}} {{[-d|--decompress]}} {{path/to/file.gz}}"
+  },
+  {
+    "question": "Search for a pattern within a file:",
+    "answer": "grep \"{{search_pattern}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Search for an exact string (disables regular expressions):",
+    "answer": "grep {{[-F|--fixed-strings]}} \"{{exact_string}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Search for a pattern in all files recursively in a directory, showing line numbers of matches, ignoring binary files:",
+    "answer": "grep {{[-r|--recursive]}} {{[-n|--line-number]}} {{[-I|--binary-files=without-match]}} \"{{search_pattern}}\" {{path/to/directory}}"
+  },
+  {
+    "question": "Use extended regular expressions (supports `?`, `+`, `{}`, `()`, and `|`), in case-insensitive mode:",
+    "answer": "grep {{[-E|--extended-regexp]}} {{[-i|--ignore-case]}} \"{{search_pattern}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Print 3 lines of [C]ontext around, [B]efore or [A]fter each match:",
+    "answer": "grep --{{context|before-context|after-context}} 3 \"{{search_pattern}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Print file name and line number for each match with color output:",
+    "answer": "grep {{[-H|--with-filename]}} {{[-n|--line-number]}} --color=always \"{{search_pattern}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Search for lines matching a pattern, printing only the matched text:",
+    "answer": "grep {{[-o|--only-matching]}} \"{{search_pattern}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Search `stdin` for lines that do not match a pattern:",
+    "answer": "cat {{path/to/file}} | grep {{[-v|--invert-match]}} \"{{search_pattern}}\""
+  },
+  {
+    "question": "Make an HTTP GET request and dump the contents in `stdout`:",
+    "answer": "curl {{https://example.com}}"
+  },
+  {
+    "question": "Make an HTTP GET request, follow any `3xx` redirects, and dump the reply headers and contents to `stdout`:",
+    "answer": "curl {{[-L|--location]}} {{[-D|--dump-header]}} - {{https://example.com}}"
+  },
+  {
+    "question": "Download a file, saving the output under the filename indicated by the URL:",
+    "answer": "curl {{[-O|--remote-name]}} {{https://example.com/filename.zip}}"
+  },
+  {
+    "question": "Send form-encoded data (POST request of type `application/x-www-form-urlencoded`). Use `--data @file_name` or `--data @'-'` to read from `stdin`:",
+    "answer": "curl {{[-X|--request]}} POST {{[-d|--data]}} {{'name=bob'}} {{http://example.com/form}}"
+  },
+  {
+    "question": "Send a request with an extra header, using a custom HTTP method and over a proxy (such as BurpSuite), ignoring insecure self-signed certificates:",
+    "answer": "curl {{[-k|--insecure]}} {{[-x|--proxy]}} {{http://127.0.0.1:8080}} {{[-H|--header]}} {{'Authorization: Bearer token'}} {{[-X|--request]}} {{GET|PUT|POST|DELETE|PATCH|...}} {{https://example.com}}"
+  },
+  {
+    "question": "Send data in JSON format, specifying the appropriate Content-Type header:",
+    "answer": "curl {{[-d|--data]}} {{'{\"name\":\"bob\"}'}} {{[-H|--header]}} {{'Content-Type: application/json'}} {{http://example.com/users/1234}}"
+  },
+  {
+    "question": "Pass client certificate and key for a resource, skipping certificate validation:",
+    "answer": "curl {{[-E|--cert]}} {{client.pem}} --key {{key.pem}} {{[-k|--insecure]}} {{https://example.com}}"
+  },
+  {
+    "question": "Resolve a hostname to a custom IP address, with verbose output (similar to editing the `/etc/hosts` file for custom DNS resolution):",
+    "answer": "curl {{[-v|--verbose]}} --resolve {{example.com}}:{{80}}:{{127.0.0.1}} {{http://example.com}}"
+  },
+  {
+    "question": "List files one per line:",
+    "answer": "ls -1"
+  },
+  {
+    "question": "List all files, including hidden files:",
+    "answer": "ls {{[-a|--all]}}"
+  },
+  {
+    "question": "List files with a trailing symbol to indicate file type (directory/, symbolic_link@, executable*, ...):",
+    "answer": "ls {{[-F|--classify]}}"
+  },
+  {
+    "question": "List all files in [l]ong format (permissions, ownership, size, and modification date):",
+    "answer": "ls {{[-la|-l --all]}}"
+  },
+  {
+    "question": "List files in [l]ong format with size displayed using human-readable units (KiB, MiB, GiB):",
+    "answer": "ls {{[-lh|-l --human-readable]}}"
+  },
+  {
+    "question": "List files in [l]ong format, sorted by [S]ize (descending) recursively:",
+    "answer": "ls {{[-lSR|-lS --recursive]}}"
+  },
+  {
+    "question": "List files in [l]ong format, sorted by [t]ime the file was modified and in reverse order (oldest first):",
+    "answer": "ls {{[-ltr|-lt --reverse]}}"
+  },
+  {
+    "question": "Only list directories:",
+    "answer": "ls {{[-d|--directory]}} */"
+  },
+  {
+    "question": "Go to the specified directory:",
+    "answer": "cd {{path/to/directory}}"
+  },
+  {
+    "question": "Go up to the parent of the current directory:",
+    "answer": "cd .."
+  },
+  {
+    "question": "Go to the home directory of the current user:",
+    "answer": "cd"
+  },
+  {
+    "question": "Go to the home directory of the specified user:",
+    "answer": "cd ~{{username}}"
+  },
+  {
+    "question": "Go to the previously chosen directory:",
+    "answer": "cd -"
+  },
+  {
+    "question": "Go to the root directory:",
+    "answer": "cd /"
+  },
+  {
+    "question": "Remove specific files:",
+    "answer": "rm {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "Remove specific files ignoring nonexistent ones:",
+    "answer": "rm {{[-f|--force]}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "Remove specific files interactively prompting before each removal:",
+    "answer": "rm {{[-i|--interactive]}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "Remove specific files printing info about each removal:",
+    "answer": "rm {{[-v|--verbose]}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "Remove specific files and directories recursively:",
+    "answer": "rm {{[-r|--recursive]}} {{path/to/file_or_directory1 path/to/file_or_directory2 ...}}"
+  },
+  {
+    "question": "Remove empty directories (this is considered the safe method):",
+    "answer": "rm {{[-d|--dir]}} {{path/to/directory}}"
+  },
+  {
+    "question": "Copy a file to another location:",
+    "answer": "cp {{path/to/source_file.ext}} {{path/to/target_file.ext}}"
+  },
+  {
+    "question": "Copy a file into another directory, keeping the filename:",
+    "answer": "cp {{path/to/source_file.ext}} {{path/to/target_parent_directory}}"
+  },
+  {
+    "question": "Recursively copy a directory's contents to another location (if the destination exists, the directory is copied inside it):",
+    "answer": "cp {{[-r|--recursive]}} {{path/to/source_directory}} {{path/to/target_directory}}"
+  },
+  {
+    "question": "Copy a directory recursively, in verbose mode (shows files as they are copied):",
+    "answer": "cp {{[-vr|--verbose --recursive]}} {{path/to/source_directory}} {{path/to/target_directory}}"
+  },
+  {
+    "question": "Copy multiple files at once to a directory:",
+    "answer": "cp {{[-t|--target-directory]}} {{path/to/destination_directory}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "Copy all files with a specific extension to another location, in interactive mode (prompts user before overwriting):",
+    "answer": "cp {{[-i|--interactive]}} {{*.ext}} {{path/to/target_directory}}"
+  },
+  {
+    "question": "Follow symbolic links before copying:",
+    "answer": "cp {{[-L|--dereference]}} {{link}} {{path/to/target_directory}}"
+  },
+  {
+    "question": "Use the full path of source files, creating any missing intermediate directories when copying:",
+    "answer": "cp --parents {{source/path/to/file}} {{path/to/target_file}}"
+  },
+  {
+    "question": "Rename a file or directory when the target is not an existing directory:",
+    "answer": "mv {{path/to/source}} {{path/to/target}}"
+  },
+  {
+    "question": "Move a file or directory into an existing directory:",
+    "answer": "mv {{path/to/source}} {{path/to/existing_directory}}"
+  },
+  {
+    "question": "Move multiple files into an existing directory, keeping the filenames unchanged:",
+    "answer": "mv {{path/to/source1 path/to/source2 ...}} {{path/to/existing_directory}}"
+  },
+  {
+    "question": "Do not prompt for confirmation before overwriting existing files:",
+    "answer": "mv {{[-f|--force]}} {{path/to/source}} {{path/to/target}}"
+  },
+  {
+    "question": "Prompt for confirmation interactively before overwriting existing files, regardless of file permissions:",
+    "answer": "mv {{[-i|--interactive]}} {{path/to/source}} {{path/to/target}}"
+  },
+  {
+    "question": "Do not overwrite existing files at the target:",
+    "answer": "mv {{[-n|--no-clobber]}} {{path/to/source}} {{path/to/target}}"
+  },
+  {
+    "question": "Move files in verbose mode, showing files after they are moved:",
+    "answer": "mv {{[-v|--verbose]}} {{path/to/source}} {{path/to/target}}"
+  },
+  {
+    "question": "Specify target directory so that you can use external tools to gather movable files:",
+    "answer": "{{find /var/log -type f -name '*.log' -print0}} | {{xargs -0}} mv {{[-t|--target-directory]}} {{path/to/target_directory}}"
+  },
+  {
+    "question": "Create specific directories:",
+    "answer": "mkdir {{path/to/directory1 path/to/directory2 ...}}"
+  },
+  {
+    "question": "Create specific directories and their parents if needed:",
+    "answer": "mkdir {{[-p|--parents]}} {{path/to/directory1 path/to/directory2 ...}}"
+  },
+  {
+    "question": "Create directories with specific permissions:",
+    "answer": "mkdir {{[-m|--mode]}} {{rwxrw-r--}} {{path/to/directory1 path/to/directory2 ...}}"
+  },
+  {
+    "question": "Create specific files:",
+    "answer": "touch {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "Set the file [a]ccess or [m]odification times to the current one and don't create file if it doesn't exist:",
+    "answer": "touch {{[-c|--no-create]}} -{{a|m}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "Set the file [t]ime to a specific value and don't create file if it doesn't exist:",
+    "answer": "touch {{[-c|--no-create]}} -t {{YYYYMMDDHHMM.SS}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "Set the files' timestamp to the reference file's timestamp, and do not create the file if it does not exist:",
+    "answer": "touch {{[-c|--no-create]}} {{[-r|--reference]}} {{path/to/reference_file}} {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "Set the timestamp by parsing a string:",
+    "answer": "touch {{[-d|--date]}} \"{{last year|5 hours|next thursday|nov 14|...}}\" {{path/to/file}}"
+  },
+  {
+    "question": "Find files by extension:",
+    "answer": "find {{root_path}} -name '{{*.ext}}'"
+  },
+  {
+    "question": "Find files matching multiple path/name patterns:",
+    "answer": "find {{root_path}} -path '{{*/path/*/*.ext}}' -or -name '{{*pattern*}}'"
+  },
+  {
+    "question": "Find directories matching a given name, in case-insensitive mode:",
+    "answer": "find {{root_path}} -type d -iname '{{*lib*}}'"
+  },
+  {
+    "question": "Find files matching a given pattern, excluding specific paths:",
+    "answer": "find {{root_path}} -name '{{*.py}}' -not -path '{{*/site-packages/*}}'"
+  },
+  {
+    "question": "Find files matching a given size range, limiting the recursive depth to \"1\":",
+    "answer": "find {{root_path}} -maxdepth 1 -size {{+500k}} -size {{-10M}}"
+  },
+  {
+    "question": "Run a command for each file (use `{}` within the command to access the filename):",
+    "answer": "find {{root_path}} -name '{{*.ext}}' -exec {{wc -l}} {} \\;"
+  },
+  {
+    "question": "Find all files modified today and pass the results to a single command as arguments:",
+    "answer": "find {{root_path}} -daystart -mtime {{-1}} -exec {{tar -cvf archive.tar}} {} \\+"
+  },
+  {
+    "question": "Search for either empty files or directories and delete them verbosely:",
+    "answer": "find {{root_path}} -type {{f|d}} -empty -delete -print"
+  },
+  {
+    "question": "Print the contents of a file to `stdout`:",
+    "answer": "cat {{path/to/file}}"
+  },
+  {
+    "question": "Concatenate several files into an output file:",
+    "answer": "cat {{path/to/file1 path/to/file2 ...}} > {{path/to/output_file}}"
+  },
+  {
+    "question": "Append several files to an output file:",
+    "answer": "cat {{path/to/file1 path/to/file2 ...}} >> {{path/to/output_file}}"
+  },
+  {
+    "question": "Copy the contents of a file into an output file without buffering:",
+    "answer": "cat -u {{/dev/tty12}} > {{/dev/tty13}}"
+  },
+  {
+    "question": "Write `stdin` to a file:",
+    "answer": "cat - > {{path/to/file}}"
+  },
+  {
+    "question": "Print a text message. Note: Quotes are optional:",
+    "answer": "echo \"{{Hello World}}\""
+  },
+  {
+    "question": "Print a message with environment variables:",
+    "answer": "echo \"{{My path is $PATH}}\""
+  },
+  {
+    "question": "Print a message without the trailing newline:",
+    "answer": "echo -n \"{{Hello World}}\""
+  },
+  {
+    "question": "Append a message to the file:",
+    "answer": "echo \"{{Hello World}}\" >> {{file.txt}}"
+  },
+  {
+    "question": "Enable interpretation of backslash escapes (special characters):",
+    "answer": "echo -e \"{{Column 1\\tColumn 2}}\""
+  },
+  {
+    "question": "Print the exit status of the last executed command (Note: In Windows Command Prompt and PowerShell the equivalent commands are `echo %errorlevel%` and `$lastexitcode` respectively):",
+    "answer": "echo $?"
+  },
+  {
+    "question": "Connect to a remote server:",
+    "answer": "ssh {{username}}@{{remote_host}}"
+  },
+  {
+    "question": "Connect to a remote server with a specific identity (private key):",
+    "answer": "ssh -i {{path/to/key_file}} {{username}}@{{remote_host}}"
+  },
+  {
+    "question": "Connect to a remote server with IP `10.0.0.1` and using a specific [p]ort (Note: `10.0.0.1` can be shortened to `10.1`):",
+    "answer": "ssh {{username}}@10.0.0.1 -p {{2222}}"
+  },
+  {
+    "question": "Run a command on a remote server with a [t]ty allocation allowing interaction with the remote command:",
+    "answer": "ssh {{username}}@{{remote_host}} -t {{command}} {{command_arguments}}"
+  },
+  {
+    "question": "SSH tunneling: [D]ynamic port forwarding (SOCKS proxy on `localhost:1080`):",
+    "answer": "ssh -D {{1080}} {{username}}@{{remote_host}}"
+  },
+  {
+    "question": "SSH tunneling: Forward a specific port (`localhost:9999` to `example.org:80`) along with disabling pseudo-[T]ty allocation and executio[N] of remote commands:",
+    "answer": "ssh -L {{9999}}:{{example.org}}:{{80}} -N -T {{username}}@{{remote_host}}"
+  },
+  {
+    "question": "SSH [J]umping: Connect through a jumphost to a remote server (Multiple jump hops may be specified separated by comma characters):",
+    "answer": "ssh -J {{username}}@{{jump_host}} {{username}}@{{remote_host}}"
+  },
+  {
+    "question": "Close a hanged session:",
+    "answer": "<Enter><~><.>"
+  },
+  {
+    "question": "Copy a local file to a remote host:",
+    "answer": "scp {{path/to/local_file}} {{remote_host}}:{{path/to/remote_file}}"
+  },
+  {
+    "question": "Use a specific port when connecting to the remote host:",
+    "answer": "scp -P {{port}} {{path/to/local_file}} {{remote_host}}:{{path/to/remote_file}}"
+  },
+  {
+    "question": "Copy a file from a remote host to a local directory:",
+    "answer": "scp {{remote_host}}:{{path/to/remote_file}} {{path/to/local_directory}}"
+  },
+  {
+    "question": "Recursively copy the contents of a directory from a remote host to a local directory:",
+    "answer": "scp -r {{remote_host}}:{{path/to/remote_directory}} {{path/to/local_directory}}"
+  },
+  {
+    "question": "Copy a file between two remote hosts transferring through the local host:",
+    "answer": "scp -3 {{host1}}:{{path/to/remote_file}} {{host2}}:{{path/to/remote_directory}}"
+  },
+  {
+    "question": "Use a specific username when connecting to the remote host:",
+    "answer": "scp {{path/to/local_file}} {{remote_username}}@{{remote_host}}:{{path/to/remote_directory}}"
+  },
+  {
+    "question": "Use a specific SSH private key for authentication with the remote host:",
+    "answer": "scp -i {{~/.ssh/private_key}} {{path/to/local_file}} {{remote_host}}:{{path/to/remote_file}}"
+  },
+  {
+    "question": "Use a specific proxy when connecting to the remote host:",
+    "answer": "scp -J {{proxy_username}}@{{proxy_host}} {{path/to/local_file}} {{remote_host}}:{{path/to/remote_file}}"
+  },
+  {
+    "question": "Give the [u]ser who owns a file the right to e[x]ecute it:",
+    "answer": "chmod u+x {{path/to/file}}"
+  },
+  {
+    "question": "Give the [u]ser rights to [r]ead and [w]rite to a file/directory:",
+    "answer": "chmod u+rw {{path/to/file_or_directory}}"
+  },
+  {
+    "question": "Remove e[x]ecutable rights from the [g]roup:",
+    "answer": "chmod g-x {{path/to/file}}"
+  },
+  {
+    "question": "Give [a]ll users rights to [r]ead and e[x]ecute:",
+    "answer": "chmod a+rx {{path/to/file}}"
+  },
+  {
+    "question": "Give [o]thers (not in the file owner's group) the same rights as the [g]roup:",
+    "answer": "chmod o=g {{path/to/file}}"
+  },
+  {
+    "question": "Remove all rights from [o]thers:",
+    "answer": "chmod o= {{path/to/file}}"
+  },
+  {
+    "question": "Change permissions recursively giving [g]roup and [o]thers the ability to [w]rite:",
+    "answer": "chmod {{[-R|--recursive]}} g+w,o+w {{path/to/directory}}"
+  },
+  {
+    "question": "Recursively give [a]ll users [r]ead permissions to files and e[X]ecute permissions to sub-directories within a directory:",
+    "answer": "chmod {{[-R|--recursive]}} a+rX {{path/to/directory}}"
+  },
+  {
+    "question": "Change the owner user of a file/directory:",
+    "answer": "chown {{user}} {{path/to/file_or_directory}}"
+  },
+  {
+    "question": "Change the owner user and group of a file/directory:",
+    "answer": "chown {{user}}:{{group}} {{path/to/file_or_directory}}"
+  },
+  {
+    "question": "Change the owner user and group to both have the name `user`:",
+    "answer": "chown {{user}}: {{path/to/file_or_directory}}"
+  },
+  {
+    "question": "Recursively change the owner of a directory and its contents:",
+    "answer": "chown {{[-R|--recursive]}} {{user}} {{path/to/directory}}"
+  },
+  {
+    "question": "Change the owner of a symbolic link:",
+    "answer": "chown {{[-h|--no-dereference]}} {{user}} {{path/to/symlink}}"
+  },
+  {
+    "question": "Change the owner of a file/directory to match a reference file:",
+    "answer": "chown --reference {{path/to/reference_file}} {{path/to/file_or_directory}}"
+  },
+  {
+    "question": "List all running processes:",
+    "answer": "ps aux"
+  },
+  {
+    "question": "List all running processes including the full command string:",
+    "answer": "ps auxww"
+  },
+  {
+    "question": "Search for a process that matches a string (the brackets will prevent `grep` from matching itself):",
+    "answer": "ps aux | grep {{[s]tring}}"
+  },
+  {
+    "question": "List all processes of the current user in extra full format:",
+    "answer": "ps {{[-u|--user]}} $(id {{[-u|--user]}}) -F"
+  },
+  {
+    "question": "List all processes of the current user as a tree:",
+    "answer": "ps {{[-u|--user]}} $(id {{[-u|--user]}}) f"
+  },
+  {
+    "question": "Get the parent PID of a process:",
+    "answer": "ps {{[-o|--format]}} ppid= {{[-p|--pid]}} {{pid}}"
+  },
+  {
+    "question": "Sort processes by memory consumption:",
+    "answer": "ps {{[k|--sort]}} size"
+  },
+  {
+    "question": "Terminate a program using the default SIGTERM (terminate) signal:",
+    "answer": "kill {{process_id}}"
+  },
+  {
+    "question": "List available signal names (to be used without the `SIG` prefix):",
+    "answer": "kill -l"
+  },
+  {
+    "question": "Terminate a program using the SIGHUP (hang up) signal. Many daemons will reload instead of terminating:",
+    "answer": "kill -{{1|HUP}} {{process_id}}"
+  },
+  {
+    "question": "Terminate a program using the SIGINT (interrupt) signal. This is typically initiated by the user pressing `<Ctrl c>`:",
+    "answer": "kill -{{2|INT}} {{process_id}}"
+  },
+  {
+    "question": "Signal the operating system to immediately terminate a program (which gets no chance to capture the signal):",
+    "answer": "kill -{{9|KILL}} {{process_id}}"
+  },
+  {
+    "question": "Signal the operating system to pause a program until a SIGCONT (\"continue\") signal is received:",
+    "answer": "kill -{{17|STOP}} {{process_id}}"
+  },
+  {
+    "question": "Send a `SIGUSR1` signal to all processes with the given GID (group id):",
+    "answer": "kill -{{SIGUSR1}} -{{group_id}}"
+  },
+  {
+    "question": "List the sizes of a directory and any subdirectories, in the given unit (B/KiB/MiB):",
+    "answer": "du -{{b|k|m}} {{path/to/directory}}"
+  },
+  {
+    "question": "List the sizes of a directory and any subdirectories, in human-readable form (i.e. auto-selecting the appropriate unit for each size):",
+    "answer": "du {{[-h|--human-readable]}} {{path/to/directory}}"
+  },
+  {
+    "question": "Show the size of a single directory, in human-readable units:",
+    "answer": "du {{[-sh|--summarize --human-readable]}} {{path/to/directory}}"
+  },
+  {
+    "question": "List the human-readable sizes of a directory and of all the files and directories within it:",
+    "answer": "du {{[-ah|--all --human-readable]}} {{path/to/directory}}"
+  },
+  {
+    "question": "List the human-readable sizes of a directory and any subdirectories, up to N levels deep:",
+    "answer": "du {{[-h|--human-readable]}} {{[-d|--max-depth]}} N {{path/to/directory}}"
+  },
+  {
+    "question": "List the human-readable size of all `.jpg` files in current directory, and show a cumulative total at the end:",
+    "answer": "du {{[-ch|--total --human-readable]}} {{./*.jpg}}"
+  },
+  {
+    "question": "List all files and directories (including hidden ones) above a certain threshold size (useful for investigating what is actually taking up the space):",
+    "answer": "du {{[-ah|--all --human-readable]}} {{[-t|--threshold]}} {{1G|1024M|1048576K}} .[^.]* *"
+  },
+  {
+    "question": "Display all filesystems and their disk usage using 512-byte units:",
+    "answer": "df"
+  },
+  {
+    "question": "Display the filesystem and its disk usage containing the given file or directory:",
+    "answer": "df {{path/to/file_or_directory}}"
+  },
+  {
+    "question": "Use 1024-byte units when writing space figures:",
+    "answer": "df -k"
+  },
+  {
+    "question": "Display information in a portable way:",
+    "answer": "df -P"
+  },
+  {
+    "question": "Start the editor:",
+    "answer": "nano"
+  },
+  {
+    "question": "Start the editor without using configuration files:",
+    "answer": "nano {{[-I|--ignorercfiles]}}"
+  },
+  {
+    "question": "Open specific files, moving to the next file when closing the previous one:",
+    "answer": "nano {{path/to/file1 path/to/file2 ...}}"
+  },
+  {
+    "question": "Open a file and position the cursor at a specific line and column:",
+    "answer": "nano +{{line}},{{column}} {{path/to/file}}"
+  },
+  {
+    "question": "Open a file and enable soft wrapping:",
+    "answer": "nano {{[-S|--softwrap]}} {{path/to/file}}"
+  },
+  {
+    "question": "Open a file and indent new lines to the previous line's indentation:",
+    "answer": "nano {{[-i|--autoindent]}} {{path/to/file}}"
+  },
+  {
+    "question": "Open a file and create a backup file (`path/to/file~`) on save:",
+    "answer": "nano {{[-B|--backup]}} {{path/to/file}}"
+  },
+  {
+    "question": "Exit nano:",
+    "answer": "<Ctrl x>"
+  },
+  {
+    "question": "Open a file:",
+    "answer": "vim {{path/to/file}}"
+  },
+  {
+    "question": "Open a file at a specified line number:",
+    "answer": "vim +{{line_number}} {{path/to/file}}"
+  },
+  {
+    "question": "View Vim's help manual:",
+    "answer": "<:>help<Enter>"
+  },
+  {
+    "question": "Save and quit the current buffer:",
+    "answer": "{{<Esc><Z><Z>|<Esc><:>x<Enter>|<Esc><:>wq<Enter>}}"
+  },
+  {
+    "question": "Enter normal mode and undo the last operation:",
+    "answer": "<Esc><u>"
+  },
+  {
+    "question": "Search for a pattern in the file (press `<n>`/`<N>` to go to next/previous match):",
+    "answer": "</>{{search_pattern}}<Enter>"
+  },
+  {
+    "question": "Perform a regular expression substitution in the whole file:",
+    "answer": "<:>%s/{{regular_expression}}/{{replacement}}/g<Enter>"
+  },
+  {
+    "question": "Display the line numbers:",
+    "answer": "<:>set nu<Enter>"
+  },
+  {
+    "question": "Download the contents of a URL to a file (named \"foo\" in this case):",
+    "answer": "wget {{https://example.com/foo}}"
+  },
+  {
+    "question": "Download the contents of a URL to a file (named \"bar\" in this case):",
+    "answer": "wget {{[-O|--output-document]}} {{bar}} {{https://example.com/foo}}"
+  },
+  {
+    "question": "Download a single web page and all its resources with 3-second intervals between requests (scripts, stylesheets, images, etc.):",
+    "answer": "wget {{[-p|--page-requisites]}} {{[-k|--convert-links]}} {{[-w|--wait]}} 3 {{https://example.com/somepage.html}}"
+  },
+  {
+    "question": "Download all listed files within a directory and its sub-directories (does not download embedded page elements):",
+    "answer": "wget {{[-m|--mirror]}} {{[-np|--no-parent]}} {{https://example.com/somepath/}}"
+  },
+  {
+    "question": "Limit the download speed and the number of connection retries:",
+    "answer": "wget --limit-rate {{300k}} {{[-t|--tries]}} {{100}} {{https://example.com/somepath/}}"
+  },
+  {
+    "question": "Download a file from an HTTP server using Basic Auth (also works for FTP):",
+    "answer": "wget --user {{username}} --password {{password}} {{https://example.com}}"
+  },
+  {
+    "question": "Continue an incomplete download:",
+    "answer": "wget {{[-c|--continue]}} {{https://example.com}}"
+  },
+  {
+    "question": "Download all URLs stored in a text file to a specific directory:",
+    "answer": "wget {{[-P|--directory-prefix]}} {{path/to/directory}} {{[-i|--input-file]}} {{URLs.txt}}"
+  },
+  {
+    "question": "Add files/directories to a specific archive:",
+    "answer": "zip {{[-r|--recurse-paths]}} {{path/to/compressed.zip}} {{path/to/file_or_directory1 path/to/file_or_directory2 ...}}"
+  },
+  {
+    "question": "Remove files/directories from a specific archive:",
+    "answer": "zip {{[-d|--delete]}} {{path/to/compressed.zip}} {{path/to/file_or_directory1 path/to/file_or_directory2 ...}}"
+  },
+  {
+    "question": "Archive files/directories excluding specified ones:",
+    "answer": "zip {{[-r|--recurse-paths]}} {{path/to/compressed.zip}} {{path/to/file_or_directory1 path/to/file_or_directory2 ...}} {{[-x|--exclude]}} {{path/to/excluded_files_or_directories}}"
+  },
+  {
+    "question": "Archive files/directories with a specific compression level (`0` - the lowest, `9` - the highest):",
+    "answer": "zip {{[-r|--recurse-paths]}} -{{0..9}} {{path/to/compressed.zip}} {{path/to/file_or_directory1 path/to/file_or_directory2 ...}}"
+  },
+  {
+    "question": "Create an encrypted archive with a specific password:",
+    "answer": "zip {{[-re|--recurse-paths --encrypt]}} {{path/to/compressed.zip}} {{path/to/file_or_directory1 path/to/file_or_directory2 ...}}"
+  },
+  {
+    "question": "Archive files/directories to a multi-part split Zip archive (e.g. 3 GB parts):",
+    "answer": "zip {{[-rs|--recurse-paths --split-size]}} {{3g}} {{path/to/compressed.zip}} {{path/to/file_or_directory1 path/to/file_or_directory2 ...}}"
+  },
+  {
+    "question": "Print a specific archive contents:",
+    "answer": "zip {{[-sf|--split-size --freshen]}} {{path/to/compressed.zip}}"
+  },
+  {
+    "question": "Extract all files/directories from specific archives into the current directory:",
+    "answer": "unzip {{path/to/archive1.zip path/to/archive2.zip ...}}"
+  },
+  {
+    "question": "Extract files/directories from archives to a specific path:",
+    "answer": "unzip {{path/to/archive1.zip path/to/archive2.zip ...}} -d {{path/to/output}}"
+  },
+  {
+    "question": "Extract files/directories from archives to `stdout` alongside the extracted file names:",
+    "answer": "unzip -c {{path/to/archive1.zip path/to/archive2.zip ...}}"
+  },
+  {
+    "question": "Extract an archive created on Windows, containing files with non-ASCII (e.g. Chinese or Japanese characters) filenames:",
+    "answer": "unzip -O {{gbk}} {{path/to/archive1.zip path/to/archive2.zip ...}}"
+  },
+  {
+    "question": "List the contents of a specific archive without extracting them:",
+    "answer": "unzip -l {{path/to/archive.zip}}"
+  },
+  {
+    "question": "Extract a specific file from an archive:",
+    "answer": "unzip -j {{path/to/archive.zip}} {{path/to/file1_in_archive path/to/file2_in_archive ...}}"
+  },
+  {
+    "question": "Run a command using the input data as arguments:",
+    "answer": "{{arguments_source}} | xargs {{command}}"
+  },
+  {
+    "question": "Run multiple chained commands on the input data:",
+    "answer": "{{arguments_source}} | xargs sh -c \"{{command1}} && {{command2}} | {{command3}}\""
+  },
+  {
+    "question": "Gzip all files with `.log` extension taking advantage of multiple threads (`-print0` uses a null character to split file names, and `-0` uses it as delimiter):",
+    "answer": "find . -name '*.log' -print0 | xargs {{[-0|--null]}} {{[-P|--max-procs]}} {{4}} {{[-n|--max-args]}} 1 gzip"
+  },
+  {
+    "question": "Execute the command once per argument:",
+    "answer": "{{arguments_source}} | xargs {{[-n|--max-args]}} 1 {{command}}"
+  },
+  {
+    "question": "Execute the command once for each input line, replacing any occurrences of the placeholder (here marked as `_`) with the input line:",
+    "answer": "{{arguments_source}} | xargs -I _ {{command}} _ {{optional_extra_arguments}}"
+  },
+  {
+    "question": "Parallel runs of up to `max-procs` processes at a time; the default is 1. If `max-procs` is 0, xargs will run as many processes as possible at a time:",
+    "answer": "{{arguments_source}} | xargs {{[-P|--max-procs]}} {{max-procs}} {{command}}"
+  },
+  {
+    "question": "Prompt user for confirmation before executing command (confirm with `y` or `Y`):",
+    "answer": "{{arguments_source}} | xargs {{[-p|--interactive]}} {{command}}"
+  },
+  {
+    "question": "Copy `stdin` to each file, and also to `stdout`:",
+    "answer": "echo \"example\" | tee {{path/to/file}}"
+  },
+  {
+    "question": "Append to the given files, do not overwrite:",
+    "answer": "echo \"example\" | tee {{[-a|--append]}} {{path/to/file}}"
+  },
+  {
+    "question": "Print `stdin` to the terminal, and also pipe it into another program for further processing:",
+    "answer": "echo \"example\" | tee {{/dev/tty}} | {{xargs printf \"[%s]\"}}"
+  },
+  {
+    "question": "Create a directory called \"example\", count the number of characters in \"example\" and write \"example\" to the terminal:",
+    "answer": "echo \"example\" | tee >(xargs mkdir) >(wc {{[-c|--bytes]}})"
+  },
+  {
+    "question": "Print the fifth column (a.k.a. field) in a space-separated file:",
+    "answer": "awk '{print $5}' {{path/to/file}}"
+  },
+  {
+    "question": "Print the second column of the lines containing \"foo\" in a space-separated file:",
+    "answer": "awk '/{{foo}}/ {print $2}' {{path/to/file}}"
+  },
+  {
+    "question": "Print the last column of each line in a file, using a comma (instead of space) as a field separator:",
+    "answer": "awk -F ',' '{print $NF}' {{path/to/file}}"
+  },
+  {
+    "question": "Sum the values in the first column of a file and print the total:",
+    "answer": "awk '{s+=$1} END {print s}' {{path/to/file}}"
+  },
+  {
+    "question": "Print every third line starting from the first line:",
+    "answer": "awk 'NR%3==1' {{path/to/file}}"
+  },
+  {
+    "question": "Print different values based on conditions:",
+    "answer": "awk '{if ($1 == \"foo\") print \"Exact match foo\"; else if ($1 ~ \"bar\") print \"Partial match bar\"; else print \"Baz\"}' {{path/to/file}}"
+  },
+  {
+    "question": "Print all the lines which the 10th column value is between a min and a max:",
+    "answer": "awk '($10 >= {{min_value}} && $10 <= {{max_value}})'"
+  },
+  {
+    "question": "Print table of users with UID >=1000 with header and formatted output, using colon as separator (`%-20s` mean: 20 left-align string characters, `%6s` means: 6 right-align string characters):",
+    "answer": "awk 'BEGIN {FS=\":\";printf \"%-20s %6s %25s\\n\", \"Name\", \"UID\", \"Shell\"} $4 >= 1000 {printf \"%-20s %6d %25s\\n\", $1, $4, $7}' /etc/passwd"
+  },
+  {
+    "question": "Replace all `apple` (basic regex) occurrences with `mango` (basic regex) in all input lines and print the result to `stdout`:",
+    "answer": "{{command}} | sed 's/apple/mango/g'"
+  },
+  {
+    "question": "Execute a specific script [f]ile and print the result to `stdout`:",
+    "answer": "{{command}} | sed -f {{path/to/script.sed}}"
+  },
+  {
+    "question": "Print just a first line to `stdout`:",
+    "answer": "{{command}} | sed -n '1p'"
+  },
+  {
+    "question": "Display the man page for a command:",
+    "answer": "man {{command}}"
+  },
+  {
+    "question": "Open the man page for a command in a browser (`BROWSER` environment variable can replace `=browser_name`):",
+    "answer": "man {{[-Hbrowser_name|--html=browser_name]}} {{command}}"
+  },
+  {
+    "question": "Display the man page for a command from section 7:",
+    "answer": "man {{7}} {{command}}"
+  },
+  {
+    "question": "List all available sections for a command:",
+    "answer": "man {{[-f|--whatis]}} {{command}}"
+  },
+  {
+    "question": "Display the path searched for manpages:",
+    "answer": "man {{[-w|--path]}}"
+  },
+  {
+    "question": "Display the location of a manpage rather than the manpage itself:",
+    "answer": "man {{[-w|--where]}} {{command}}"
+  },
+  {
+    "question": "Display the man page using a specific locale:",
+    "answer": "man {{[-L|--locale]}} {{locale}} {{command}}"
+  },
+  {
+    "question": "Search for manpages containing a search string:",
+    "answer": "man {{[-k|--apropos]}} \"{{search_string}}\""
+  },
+  {
+    "question": "Print the contents of a file to `stdout`:",
+    "answer": "cat {{path/to/file}}"
+  },
+  {
+    "question": "Concatenate several files into an output file:",
+    "answer": "cat {{path/to/file1 path/to/file2 ...}} > {{path/to/output_file}}"
+  },
+  {
+    "question": "Append several files to an output file:",
+    "answer": "cat {{path/to/file1 path/to/file2 ...}} >> {{path/to/output_file}}"
+  },
+  {
+    "question": "Write `stdin` to a file:",
+    "answer": "cat - > {{path/to/file}}"
+  },
+  {
+    "question": "Number all output lines:",
+    "answer": "cat {{[-n|--number]}} {{path/to/file}}"
+  },
+  {
+    "question": "Display non-printable and whitespace characters (with `M-` prefix if non-ASCII):",
+    "answer": "cat {{[-vte|--show-nonprinting -t -e]}} {{path/to/file}}"
+  },
+  {
+    "question": "Terminate a program using the default SIGTERM (terminate) signal:",
+    "answer": "kill {{process_id}}"
+  },
+  {
+    "question": "List signal values and their corresponding names (to be used without the `SIG` prefix). The available options may depend on the `kill` implementation:",
+    "answer": "kill {{-l|-L|--table}}"
+  },
+  {
+    "question": "Terminate a background job:",
+    "answer": "kill %{{job_id}}"
+  },
+  {
+    "question": "Terminate a program using the SIGHUP (hang up) signal. Many daemons will reload instead of terminating:",
+    "answer": "kill -{{1|HUP}} {{process_id}}"
+  },
+  {
+    "question": "Terminate a program using the SIGINT (interrupt) signal. This is typically initiated by the user pressing `<Ctrl c>`:",
+    "answer": "kill -{{2|INT}} {{process_id}}"
+  },
+  {
+    "question": "Signal the operating system to immediately terminate a program (which gets no chance to capture the signal):",
+    "answer": "kill -{{9|KILL}} {{process_id}}"
+  },
+  {
+    "question": "Signal the operating system to pause a program until a SIGCONT (\"continue\") signal is received:",
+    "answer": "kill -{{17|STOP}} {{process_id}}"
+  },
+  {
+    "question": "Send a `SIGUSR1` signal to all processes with the given GID (group id):",
+    "answer": "kill -{{SIGUSR1}} -{{group_id}}"
+  },
+  {
+    "question": "Display all filesystems and their disk usage:",
+    "answer": "df"
+  },
+  {
+    "question": "Display all filesystems and their disk usage in human-readable form:",
+    "answer": "df {{[-h|--human-readable]}}"
+  },
+  {
+    "question": "Display the filesystem and its disk usage containing the given file or directory:",
+    "answer": "df {{path/to/file_or_directory}}"
+  },
+  {
+    "question": "Include statistics on the number of free inodes:",
+    "answer": "df {{[-i|--inodes]}}"
+  },
+  {
+    "question": "Display filesystems but exclude the specified types:",
+    "answer": "df {{[-x|--exclude-type]}} {{squashfs}} {{[-x|--exclude-type]}} {{tmpfs}}"
+  },
+  {
+    "question": "Display filesystem types:",
+    "answer": "df {{[-T|--print-type]}}"
+  },
+  {
+    "question": "Start `top`:",
+    "answer": "top"
+  },
+  {
+    "question": "Do not show any idle or zombie processes:",
+    "answer": "top {{[-i|--idle-toggle]}}"
+  },
+  {
+    "question": "Show only processes owned by given user:",
+    "answer": "top {{[-u|--filter-only-euser]}} {{username}}"
+  },
+  {
+    "question": "Sort processes by a field:",
+    "answer": "top {{[-o|--sort-override]}} {{field_name}}"
+  },
+  {
+    "question": "Show the individual threads of a given process:",
+    "answer": "top {{[-Hp|--threads-show --pid]}} {{process_id}}"
+  },
+  {
+    "question": "Show only the processes with the given PID(s), passed as a comma-separated list. (Normally you wouldn't know PIDs off hand. This example picks the PIDs from the process name):",
+    "answer": "top {{[-p|--pid]}} $(pgrep {{[-d|--delimiter]}} ',' {{process_name}})"
+  },
+  {
+    "question": "Display help about interactive commands:",
+    "answer": "<?>"
+  },
+  {
+    "question": "Replace all `apple` (basic regex) occurrences with `mango` (basic regex) in all input lines and print the result to `stdout`:",
+    "answer": "{{command}} | sed 's/apple/mango/g'"
+  },
+  {
+    "question": "Replace all `apple` (extended regex) occurrences with `APPLE` (extended regex) in all input lines and print the result to `stdout`:",
+    "answer": "{{command}} | sed {{[-E|--regexp-extended]}} 's/(apple)/\\U\\1/g'"
+  },
+  {
+    "question": "Replace all `apple` (basic regex) occurrences with `mango` (basic regex) in a specific file and overwrite the original file in place:",
+    "answer": "sed {{[-i|--in-place]}} 's/apple/mango/g' {{path/to/file}}"
+  },
+  {
+    "question": "Execute a specific script file and print the result to `stdout`:",
+    "answer": "{{command}} | sed {{[-f|--file]}} {{path/to/script.sed}}"
+  },
+  {
+    "question": "Print just the first line to `stdout`:",
+    "answer": "{{command}} | sed {{[-n|--quiet]}} '1p'"
+  },
+  {
+    "question": "[d]elete the first line of a file:",
+    "answer": "sed {{[-i|--in-place]}} 1d {{path/to/file}}"
+  },
+  {
+    "question": "[i]nsert a new line at the first line of a file:",
+    "answer": "sed {{[-i|--in-place]}} '1i\\your new line text\\' {{path/to/file}}"
+  },
+  {
+    "question": "Print the contents of a file to `stdout`:",
+    "answer": "cat {{path/to/file}}"
+  },
+  {
+    "question": "Concatenate several files into an output file:",
+    "answer": "cat {{path/to/file1 path/to/file2 ...}} > {{path/to/output_file}}"
+  },
+  {
+    "question": "Append several files to an output file:",
+    "answer": "cat {{path/to/file1 path/to/file2 ...}} >> {{path/to/output_file}}"
+  },
+  {
+    "question": "Copy the contents of a file into an output file without buffering:",
+    "answer": "cat -u {{/dev/tty12}} > {{/dev/tty13}}"
+  },
+  {
+    "question": "Write `stdin` to a file:",
+    "answer": "cat - > {{path/to/file}}"
+  },
+  {
+    "question": "Number all output lines:",
+    "answer": "cat -n {{path/to/file}}"
+  },
+  {
+    "question": "Display non-printable and whitespace characters (with `M-` prefix if non-ASCII):",
+    "answer": "cat -v -t -e {{path/to/file}}"
+  },
+  {
+    "question": "List all running processes:",
+    "answer": "ps aux"
+  },
+  {
+    "question": "List all running processes including the full command string:",
+    "answer": "ps auxww"
+  },
+  {
+    "question": "Search for a process that matches a string:",
+    "answer": "ps aux | grep {{string}}"
+  },
+  {
+    "question": "Get the parent PID of a process:",
+    "answer": "ps -o ppid= -p {{pid}}"
+  },
+  {
+    "question": "Sort processes by memory usage:",
+    "answer": "ps -m"
+  },
+  {
+    "question": "Sort processes by CPU usage:",
+    "answer": "ps -r"
+  },
+  {
+    "question": "List the sizes of a directory and any subdirectories, in the given unit (KiB/MiB/GiB):",
+    "answer": "du -{{k|m|g}} {{path/to/directory}}"
+  },
+  {
+    "question": "List the sizes of a directory and any subdirectories, in human-readable form (i.e. auto-selecting the appropriate unit for each size):",
+    "answer": "du -h {{path/to/directory}}"
+  },
+  {
+    "question": "Show the size of a single directory, in human-readable units:",
+    "answer": "du -sh {{path/to/directory}}"
+  },
+  {
+    "question": "List the human-readable sizes of a directory and of all the files and directories within it:",
+    "answer": "du -ah {{path/to/directory}}"
+  },
+  {
+    "question": "List the human-readable sizes of a directory and any subdirectories, up to N levels deep:",
+    "answer": "du -h -d {{2}} {{path/to/directory}}"
+  },
+  {
+    "question": "List the human-readable size of all `.jpg` files in subdirectories of the current directory, and show a cumulative total at the end:",
+    "answer": "du -ch {{*/*.jpg}}"
+  },
+  {
+    "question": "Display all filesystems and their disk usage using 512-byte units:",
+    "answer": "df"
+  },
+  {
+    "question": "Use [h]uman-readable units (based on powers of 1024) and display a grand total:",
+    "answer": "df -h -c"
+  },
+  {
+    "question": "Use [H]uman-readable units (based on powers of 1000):",
+    "answer": "df -{{-si|H}}"
+  },
+  {
+    "question": "Display the filesystem and its disk usage containing the given file or directory:",
+    "answer": "df {{path/to/file_or_directory}}"
+  },
+  {
+    "question": "Include statistics on the number of free and used [i]nodes including the filesystem t[Y]pes:",
+    "answer": "df -iY"
+  },
+  {
+    "question": "Use 1024-byte units when writing space figures:",
+    "answer": "df -k"
+  },
+  {
+    "question": "Display information in a [P]ortable way:",
+    "answer": "df -P"
+  },
+  {
+    "question": "Start `top`, all options are available in the interface:",
+    "answer": "top"
+  },
+  {
+    "question": "Start `top` sorting processes by internal memory size (default order - process ID):",
+    "answer": "top -o mem"
+  },
+  {
+    "question": "Start `top` sorting processes first by CPU, then by running time:",
+    "answer": "top -o cpu -O time"
+  },
+  {
+    "question": "Start `top` displaying only processes owned by given user:",
+    "answer": "top -user {{user_name}}"
+  },
+  {
+    "question": "Display help about interactive commands:",
+    "answer": "<?>"
+  },
+  {
+    "question": "Replace all `apple` (basic regex) occurrences with `mango` (basic regex) in all input lines and print the result to `stdout`:",
+    "answer": "{{command}} | sed 's/apple/mango/g'"
+  },
+  {
+    "question": "Execute a specific script [f]ile and print the result to `stdout`:",
+    "answer": "{{command}} | sed -f {{path/to/script_file.sed}}"
+  },
+  {
+    "question": "Replace all `apple` (extended regex) occurrences with `APPLE` (extended regex) in all input lines and print the result to `stdout`:",
+    "answer": "{{command}} | sed -E 's/(apple)/\\U\\1/g'"
+  },
+  {
+    "question": "Print just a first line to `stdout`:",
+    "answer": "{{command}} | sed -n '1p'"
+  },
+  {
+    "question": "Replace all `apple` (basic regex) occurrences with `mango` (basic regex) in a `file` and save a backup of the original to `file.bak`:",
+    "answer": "sed -i bak 's/apple/mango/g' {{path/to/file}}"
+  }
+]
