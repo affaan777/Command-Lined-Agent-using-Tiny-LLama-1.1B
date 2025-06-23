@@ -71,8 +71,8 @@ Score: 2 ✅
 
 ## 📊 Summary Table
 
-| Prompt # | Query |Score |
-| | | |
+| Prompt #                   | Query |Score |
+|                            |       |      |
 | 1 | Create a new Git branch and switch to it | 2 |
 | 2 | Compress folder into reports.tar.gz | 1 |
 | 3 | List Python files recursively | 2 |
